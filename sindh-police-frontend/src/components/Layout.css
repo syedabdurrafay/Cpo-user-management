@@ -1,0 +1,13 @@
+.main-content {
+  min-height: calc(100vh - 150px); /* Account for header + footer */
+  padding-top: 80px; /* Same as header height */
+}
+
+.login-content {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px; /* Space for header */
+  padding-bottom: 2rem;
+}

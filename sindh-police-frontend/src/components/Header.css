@@ -1,0 +1,221 @@
+:root {
+  --police-dark: #0A1A2F;
+  --police-primary: #0A2D5A;
+  --police-accent: #00F5FF;
+  --police-white: #FFFFFF;
+  --neon-accent-glow: rgba(0, 245, 255, 0.7);
+  --police-glass: rgba(10, 26, 47, 0.95);
+  --police-red: #D10000;
+}
+
+.police-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+  background: var(--police-glass);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 245, 255, 0.2);
+}
+
+.police-header.scrolled {
+  height: 60px;
+  background: rgba(10, 26, 47, 0.98);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.header-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+}
+
+.logo-3d-container {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  perspective: 1000px;
+}
+
+.header-logo-img {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 0 8px var(--neon-accent-glow));
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.header-logo:hover .header-logo-img {
+  transform: scale(1.05);
+}
+
+.logo-3d-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--police-accent);
+  border-radius: 50%;
+  transform: translateZ(-8px);
+  filter: blur(12px);
+  opacity: 0.4;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.header-titles {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--police-white);
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px var(--neon-accent-glow);
+  font-family: 'Orbitron', sans-serif;
+}
+
+.header-subtitle {
+  font-size: 0.6rem;
+  font-weight: 400;
+  color: var(--police-accent);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-shadow: 0 0 3px var(--neon-accent-glow);
+}
+
+.user-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 245, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--police-accent);
+  font-size: 1rem;
+  border: 1px solid var(--police-accent);
+  box-shadow: 0 0 10px var(--neon-accent-glow);
+  transition: all 0.3s ease;
+}
+
+.user-avatar:hover {
+  transform: rotate(15deg);
+  background: rgba(0, 245, 255, 0.2);
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: white;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.user-rank {
+  font-size: 0.7rem;
+  color: var(--police-accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.logout-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 245, 255, 0.1);
+  border: 1px solid var(--police-accent);
+  color: var(--police-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+  box-shadow: 0 0 12px var(--neon-accent-glow);
+  position: relative;
+  overflow: hidden;
+}
+
+.logout-btn:hover {
+  background: var(--police-accent);
+  color: var(--police-dark);
+  transform: rotate(180deg);
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.6; }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 0 1.5rem;
+  }
+  
+  .header-title {
+    font-size: 1rem;
+  }
+  
+  .header-subtitle {
+    font-size: 0.5rem;
+  }
+  
+  .logo-3d-container {
+    height: 32px;
+    width: 32px;
+  }
+  
+  .user-name {
+    display: none;
+  }
+  
+  .user-rank {
+    display: none;
+  }
+  
+  .user-avatar, .logout-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+}

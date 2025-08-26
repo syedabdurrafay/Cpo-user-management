@@ -1,0 +1,90 @@
+/* QuickActionsPanel.css */
+.quick-actions-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.quick-actions-card:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.quick-actions-heading {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1.25rem;
+}
+
+.quick-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.action-button {
+  padding: 1.25rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.action-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.action-icon {
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.action-text {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Color Variants */
+.action-blue {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.action-blue:hover {
+  border-color: #bfdbfe;
+}
+
+.action-red {
+  background-color: #fef2f2;
+  color: #dc2626;
+}
+
+.action-red:hover {
+  border-color: #fecaca;
+}
+
+.action-green {
+  background-color: #ecfdf5;
+  color: #059669;
+}
+
+.action-green:hover {
+  border-color: #a7f3d0;
+}
+
+.action-purple {
+  background-color: #f5f3ff;
+  color: #7c3aed;
+}
+
+.action-purple:hover {
+  border-color: #ddd6fe;
+}
